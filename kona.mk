@@ -163,6 +163,8 @@ endif
 PRODUCT_PACKAGES += \
     XiaomiParts
 
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Display
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.composer-service
