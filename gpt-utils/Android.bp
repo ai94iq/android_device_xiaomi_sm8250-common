@@ -24,10 +24,10 @@ cc_library {
         "liblog",
         "libz",
     ],
-    cflags: [
-        "-Wall",
-        "-Werror",
-    ],
+    cflags: select(soong_config_variable("QTI_GPT_UTILS", "USE_BSG_FRAMEWORK"), {
+        "false": [],
+        default: ["-D_BSG_FRAMEWORK_KERNEL_HEADERS"],
+    }),
     srcs: [
         "gpt-utils.cpp",
         "recovery-ufs-bsg.cpp",
